@@ -12,8 +12,7 @@ generate_catalog <- function(
 
   message("Generating catalog from ", directory)
 
-  csv_files <- fs::dir_ls(paste0(.datos_path, "\\", directory), glob="*.csv")
-
+  csv_files <- as.character(fs::dir_ls(file.path(.datos_path, directory), glob="*.csv"))
   csv_file_counter <- 0
   csv_file_total <- length(csv_files)
   offset_serie <- 0
